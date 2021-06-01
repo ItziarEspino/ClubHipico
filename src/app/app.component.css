@@ -1,0 +1,54 @@
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(173, 0, 0);
+  font-size: 200%;
+}
+
+h2,
+h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navigation link styles */
+.topnav {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(255, 102, 0);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  float: left;
+  display: block;
+  background-color: rgb(255, 102, 0);
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: rgb(252, 156, 111);
+  color: rgb(255, 255, 255);
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #ffd000;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}

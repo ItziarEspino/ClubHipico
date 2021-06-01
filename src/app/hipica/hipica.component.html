@@ -1,0 +1,83 @@
+<div>
+  <h2>Inscripciones</h2>
+  <br>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Nacimiento</th>
+      <th>TipoClases</th>
+      <th>Dias</th>
+      <th>CaballoProp</th>
+      <th>Pupilaje</th>
+      <th>NombreCaballo</th>
+      <th>RazaCaballo</th>
+      <th>Pelaje</th>
+      <th>Eliminar</th>
+    </tr>
+    <tr *ngFor="let alumno of hipica">
+      <th><a routerLink="/alumno/{{alumno.idAl}}">{{alumno.idAl}}</a></th>
+      <th> {{alumno.nombr}} </th>
+      <th> {{alumno.fechnac}} </th>
+      <th> {{alumno.tipoclase}} </th>
+      <th> {{alumno.dias}} </th>
+      <th> {{alumno.caballoProp}} </th>
+      <th> {{alumno.pupilaje}} </th>
+      <th> {{alumno.nomCaballo}} </th>
+      <th> {{alumno.razaCaballo}} </th>
+      <th> {{alumno.pelaje}} </th>
+      <th> <button class="delete" title="delete alumno"
+      (click)="delete(alumno)">x</button> </th>
+    </tr>
+  </table>
+  <br>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th><input #idAl /></th>
+    </tr>
+    <tr>
+      <th>Nombre:</th>
+      <th><input #nombr /></th>
+    </tr>
+    <tr>
+      <th>FechaNacimiento</th>
+      <th><input #fechnac /></th>
+    </tr>
+    <tr>
+      <th>TipoClase</th>
+      <th><input #tipoclase /></th>
+    </tr>
+    <tr>
+      <th>Días</th>
+      <th><input #dias /></th>
+    </tr>
+    <tr>
+      <th>CaballoProp:</th>
+      <th><input #caballoProp /></th>
+    </tr>
+    <tr>
+      <th>Pupilaje:</th>
+      <th><input #pupilaje /></th>
+    </tr>
+    <tr>
+      <th>NombreCaballo</th>
+      <th><input #nomCaballo /></th>
+    </tr>
+    <tr>
+      <th>RazaCaballo</th>
+      <th><input #razaCaballo /></th>
+    </tr>
+    <tr>
+      <th>Pelaje</th>
+      <th><input #pelaje /></th>
+    </tr>
+    <tr>
+      <th colspan="2">
+        <button (click)="add(idAl.value, nombr.value, fechnac.value, tipoclase.value, dias.value, caballoProp.value, pupilaje.value, nomCaballo.value, razaCaballo.value, pelaje.value);idAl.value=''; nombr.value='';fechnac.value=''; tipoclase.value=''; dias.value=''; caballoProp.value='';pupilaje.value=''; nomCaballo.value=''; razaCaballo.value=''; pelaje.value=''">
+        Añadir alumno 
+      </button>
+      </th>
+    </tr>
+  </table>
+</div>

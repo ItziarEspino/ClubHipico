@@ -1,0 +1,127 @@
+<div *ngIf="alumno != undefined">
+	<h1>{{alumno.nombr}}</h1>
+
+  <p>Edite los datos del alumno con id {{alumno.idAl}} si lo desea. </p>
+  
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>
+        {{alumno.nombr}}
+      </th>
+    </tr>
+    <tr>
+      <th>Fecha de Nacimiento</th>
+      <th>{{alumno.fechnac | date:'dd-MM-yyyy'}}</th>
+    </tr>
+    <tr>
+      <th>TipoClases</th>
+      <th><input #tipoclase placeholder="{{alumno.tipoclase}}" /></th>
+    </tr>
+    <tr>
+      <th>Días</th>
+      <th><input #dias placeholder="{{alumno.dias}}" /></th>
+    </tr>
+    <tr>
+      <th>CaballoPropio</th>
+      <th><input #caballoProp placeholder="{{alumno.caballoProp}}" /></th>
+    </tr>
+    <tr>
+      <th>Pupilaje</th>
+      <th><input #pupilaje placeholder="{{alumno.pupilaje}}" /></th>
+    </tr>
+    <tr>
+      <th>NombreCaballo</th>
+      <th><input #nomCaballo placeholder="{{alumno.nomCaballo}}" /></th>
+    </tr>
+    <tr>
+      <th>RazaCaballo</th>
+      <th><input #razaCaballo placeholder="{{alumno.razaCaballo}}" /></th>
+    </tr>
+    <tr>
+      <th>Pelaje</th>
+      <th><input #pelaje placeholder="{{alumno.pelaje}}" /></th>
+    </tr>
+    <tr>
+      <th><button (click)="goBack()">Volver</button></th>
+      <th>
+        <button
+          (click)="save( tipoclase.value, dias.value, caballoProp.value, pupilaje.value, nomCaballo.value, razaCaballo.value, pelaje.value)"
+        >
+          Guardar cambios
+        </button>
+      </th>
+    </tr>
+  </table>
+  <br>
+  <h2>Competiciones en las que ha participado {{alumno.nombr | uppercase}}</h2>
+	<table class="table1">
+		<th>ID</th>
+		<th>Nombre</th>
+    <th>NombreAlumno</th>
+		<th>Modalidad</th>
+		<th>Categoría</th>
+		<th>Posición</th>
+		<th>Ganador</th>
+		<th>CaballoGanador</th>
+		<th>Premio</th>
+		<tr *ngFor="let c of alumno.competiciones">
+			<td>{{c.idComp}}</td>
+			<td><a routerLink="/competicion/{{c.idComp}}&{{c.nomComp}}">{{c.nomComp}}</a></td>
+      <td>{{c.nomAlum}}</td>
+			<td>{{c.modalidad}}</td>
+			<td>{{c.categoria}}</td>
+			<td>{{c.posicion}}</td>
+			<td>{{c.ganador}}</td>
+			<td>{{c.caballoGan}}</td>
+			<td>{{c.premio}}</td>
+    </tr>
+  </table>
+  <br>
+  <h2>Añadir nueva competición</h2>
+	<table class="table1">
+		<tr>
+			<th>ID</th>
+			<th><input #idComp /></th>
+		</tr>
+		<tr>
+			<th>Nombre</th>
+			<th><input #nomComp /></th>
+		</tr>
+    <tr>
+			<th>NombreAlumno</th>
+			<th><input #nomAlum /></th>
+		</tr>
+		<tr>
+			<th>Modalidad</th>
+			<th><input #modalidad /></th>
+		</tr>
+		<tr>
+			<th>Categoría</th>
+			<th><input #categoria /></th>
+		</tr>
+		<tr>
+			<th>Posición</th>
+			<th><input #posicion /></th>
+		</tr>
+		<tr>
+			<th>Ganador</th>
+			<th><input #ganador /></th>
+		</tr>
+		<tr>
+			<th>CaballoGanador</th>
+			<th><input #caballoGan /></th>
+		</tr>
+		<tr>
+			<th>Premio</th>
+			<th><input #premio /></th>
+		</tr>
+		<th colspan="2">
+			<button
+        (click)="add(idComp.value, nomComp.value, nomAlum.value, modalidad.value, categoria.value,  posicion.value, ganador.value, caballoGan.value, premio.value)"
+      >
+        Añadir Competición
+      </button>
+		</th>
+	</table>
+</div>

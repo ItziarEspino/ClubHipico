@@ -1,0 +1,42 @@
+<div *ngIf="competicion != undefined">
+  <h2>Editar Competición con id {{competicion.idComp}}</h2>
+  <table>
+    <tr>
+      <th>Nombre Competición:</th>
+      <th><input #nomComp placeholder="{{competicion.nomComp}}" /></th>
+    </tr>
+    <tr>
+      <th>Nombre Alumno:</th>
+      <th> {{competicion.nomAlum}} </th>
+    </tr>
+    <tr>
+      <th>Modalidad:</th>
+      <th><input #modalidad placeholder="{{competicion.modalidad}}" /></th>
+    </tr>
+    <tr>
+      <th>Categoría:</th>
+      <th><input #categoria placeholder="{{competicion.categoria}}" /></th>
+    </tr>
+    <tr>
+      <th>Posición:</th>
+      <th><input #posicion placeholder="{{competicion.posicion}}" /></th>
+    </tr>
+    <tr>
+      <th>Ganador:</th>
+      <th><input #ganador placeholder="{{competicion.ganador}}" /></th>
+    </tr>
+    <tr>
+      <th>Caballo Ganador:</th>
+      <th><input #caballoGan placeholder="{{competicion.caballoGan}}" /></th>
+    </tr>
+    <tr>
+      <th>Premio:</th>
+      <th><input #premio placeholder="{{competicion.premio}}" /></th>
+    </tr>
+    <tr>
+      <th><button (click)="goBack()">Volver</button></th>
+      <th>
+        <button (click)="save(nomComp.value, modalidad.value, categoria.value, posicion.value, ganador.value, caballoGan.value, premio.value)">Guardar</button>
+      </th>
+    </tr>
+  </table>
